@@ -1,3 +1,4 @@
+from collections import OrderedDict
 import config
 import globalPluginHandler
 import gui
@@ -26,24 +27,32 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
     title = "Microsoft Edge discard announcements"
+    settings = OrderedDict({
+        "PageLoading": {
+            "label": _("Announce loading of pages")
+        },
+        "RefreshingPage": {
+            "label": _("Announce page refresh")
+        },
+        "ClosingTab": {
+            "label": _("Announce closing of tab")
+        },
+        "OpeningNewTab": {
+            "label": _("Announce Opening of new tab")
+        },
+        "OpeningWindow": {
+            "label": _("Announce window opening")
+        },
+    })
 
     def makeSettings(self, sizer):
         self.config = config.conf["MSEdgeDiscardAnnouncements"]
         helper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
-        self.reportPageLoad = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce loading of pages")))
-        self.reportPageLoad.SetValue(self.config["PageLoading"])
-        self.reportPageRefresh = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce page refresh")))
-        self.reportPageRefresh.SetValue(self.config["RefreshingPage"])
-        self.reportCloseTab = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce closing of tab")))
-        self.reportCloseTab.SetValue(self.config["ClosingTab"])
-        self.reportOpenNewTab = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce Opening of new tab")))
-        self.reportOpenNewTab.SetValue(self.config["OpeningNewTab"])
-        self.reportOpenWindow = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce window opening")))
-        self.reportOpenWindow.SetValue(self.config["OpeningWindow"])
+        for k, v in self.settings.items():
+                setattr(self, f"{k}CheckBox", helper.addItem(wx.CheckBox(self, label=v["label"])))
+                value = self.config[k]
+                getattr(self, f"{k}CheckBox").SetValue(value)
 
     def onSave(self):
-        self.config["PageLoading"] = self.reportPageLoad.GetValue()
-        self.config["RefreshingPage"] = self.reportPageRefresh.GetValue()
-        self.config["ClosingTab"] = self.reportCloseTab.GetValue()
-        self.config["OpeningNewTab"] = self.reportOpenNewTab.GetValue()
-        self.config["OpeningWindow"] = self.reportOpenNewWindow.GetValue()
+            for k, v in self.settings.items():
+                    self.config[k] = getattr(self, f"{k}CheckBox").IsChecked()
