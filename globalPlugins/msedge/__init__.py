@@ -47,12 +47,13 @@ class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
 
     def makeSettings(self, sizer):
         self.config = config.conf["MSEdgeDiscardAnnouncements"]
-        helper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
+        self.helper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
         for k, v in self.settings.items():
-                setattr(self, f"{k}CheckBox", helper.addItem(wx.CheckBox(self, label=v["label"])))
-                value = self.config[k]
-                getattr(self, f"{k}CheckBox").SetValue(value)
+                widget = self.helper.addItem(wx.CheckBox(self, label=v["label"], name=k))
+                widget.SetValue(self.config[k])
 
     def onSave(self):
-            for k, v in self.settings.items():
-                    self.config[k] = getattr(self, f"{k}CheckBox").IsChecked()
+        for child in self.helper.sizer.GetChildren():
+            widget = child.GetWindow()
+            if isinstance(widget, wx.CheckBox):
+                self.config[widget.Name] = widget.IsChecked()
