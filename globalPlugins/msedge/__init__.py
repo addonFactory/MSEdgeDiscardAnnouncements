@@ -25,12 +25,13 @@ class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
     title = "Microsoft Edge discard announcements"
 
     def makeSettings(self, sizer):
+        self.config = config.conf["MSEdgeDiscardAnnouncements"]
         helper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
         self.reportPageLoad = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce loading of pages")))
-        self.reportPageLoad.SetValue(config.conf["MSEdgeDiscardAnnouncements"]["PageLoading"])
+        self.reportPageLoad.SetValue(self.config["PageLoading"])
         self.reportPageRefresh = helper.addItem(wx.CheckBox(self, wx.ID_ANY, label=_("Announce page refresh")))
-        self.reportPageRefresh.SetValue(config.conf["MSEdgeDiscardAnnouncements"]["RefreshingPage"])
+        self.reportPageRefresh.SetValue(self.config["RefreshingPage"])
 
     def onSave(self):
-        config.conf["MSEdgeDiscardAnnouncements"]["PageLoading"] = self.reportPageLoad.GetValue()
-        config.conf["MSEdgeDiscardAnnouncements"]["RefreshingPage"] = self.reportPageRefresh.GetValue()
+        self.config["PageLoading"] = self.reportPageLoad.GetValue()
+        self.config["RefreshingPage"] = self.reportPageRefresh.GetValue()
