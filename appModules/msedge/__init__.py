@@ -6,7 +6,7 @@ class AppModule(appModuleHandler.AppModule):
 
     def getActivityIDsFromConfig(self):
         edgeConf = config.conf["MSEdgeDiscardAnnouncements"]
-        self.activityIDs = [i[0] for i in edgeConf.items() if type(i[1]) == bool and i[1] == False]
+        self.activityIDs = [k for k, v in edgeConf.items() if type(v) == bool and v == False]
 
     def event_appModule_gainFocus(self):
         self.getActivityIDsFromConfig()
