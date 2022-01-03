@@ -15,6 +15,9 @@ settingItems = [
     Settings("ClosingTab", _("Announce closing of tab"), "boolean(default=false)"),
     Settings("OpeningNewTab", _("Announce Opening of new tab"), "boolean(default=false)"),
     Settings("OpeningWindow", _("Announce window opening"), "boolean(default=false)")
+    Settings("HubDownloadsNewDownload", _("Announce starting file download"), "boolean(default=true)")
+    Settings("HubDownloadsCompleteState", _("Announce download completion"), "boolean(default=true)")
+    Settings("GoingBack", _("Announce navigating back"), "boolean(default=false)")
     ]
 
 config.conf.spec["MSEdgeDiscardAnnouncements"] = {setting.configKey: setting.defaultValue for setting in settingItems}
@@ -27,7 +30,6 @@ class AppModule(appModuleHandler.AppModule):
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
         if not (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
             categoryClasses.append(MSEdgeDiscardAnnouncementsPanel)
-
 
     def terminate(self):
         super(AppModule, self).terminate()
