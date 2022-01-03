@@ -1,17 +1,19 @@
-from collections import OrderedDict
+from collections import namedtuple
 import config
 import globalPluginHandler
 import gui
 import wx
 
-confspec = {
-    "PageLoading": "boolean(default=false)",
-    "RefreshingPage": "boolean(default=false)",
-    "ClosingTab": "boolean(default=false)",
-    "OpeningNewTab": "boolean(default=false)",
-    "OpeningWindow": "boolean(default=false)",
-}
-config.conf.spec["MSEdgeDiscardAnnouncements"] = confspec
+Settings = namedtuple("Settings", "configKey, label, defaultValue")
+settingItems = [
+    Settings("PageLoading", _("Announce loading of pages"), "boolean(default=false)"),
+    Settings("RefreshingPage", _("Announce page refresh"), "boolean(default=false)"),
+    Settings("ClosingTab", _("Announce closing of tab"), "boolean(default=false)"),
+    Settings("OpeningNewTab", _("Announce Opening of new tab"), "boolean(default=false)"),
+    Settings("OpeningWindow", _("Announce window opening"), "boolean(default=false)")
+    ]
+
+config.conf.spec["MSEdgeDiscardAnnouncements"] = {setting.configKey: setting.defaultValue for setting in settingItems}
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
@@ -27,30 +29,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
     title = "Microsoft Edge discard announcements"
-    settings = OrderedDict({
-        "PageLoading": {
-            "label": _("Announce loading of pages")
-        },
-        "RefreshingPage": {
-            "label": _("Announce page refresh")
-        },
-        "ClosingTab": {
-            "label": _("Announce closing of tab")
-        },
-        "OpeningNewTab": {
-            "label": _("Announce Opening of new tab")
-        },
-        "OpeningWindow": {
-            "label": _("Announce window opening")
-        },
-    })
 
     def makeSettings(self, sizer):
         self.config = config.conf["MSEdgeDiscardAnnouncements"]
         self.helper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
-        for k, v in self.settings.items():
-                widget = self.helper.addItem(wx.CheckBox(self, label=v["label"], name=k))
-                widget.SetValue(self.config[k])
+        for setting in settingItems:
+                widget = self.helper.addItem(wx.CheckBox(self, label=setting.label, name=setting.configKey))
+                widget.SetValue(self.config[setting.configKey])
 
     def onSave(self):
         for child in self.helper.sizer.GetChildren():
