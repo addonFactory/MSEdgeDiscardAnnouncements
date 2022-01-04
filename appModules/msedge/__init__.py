@@ -18,6 +18,9 @@ settingItems = [
     Settings("HubDownloadsNewDownload", _("Announce starting file download"), "boolean(default=true)")
     Settings("HubDownloadsCompleteState", _("Announce download completion"), "boolean(default=true)")
     Settings("GoingBack", _("Announce navigating back"), "boolean(default=false)")
+    Settings("ToolbarButtonRemoved", _("Announce removing toolbar buttons"), "boolean(default=false)")
+    Settings("SearchMode", _("Announce of search mode"), "boolean(default=false)")
+    Settings("SearchModeAvailable", _("Announce availability of search mode"), "boolean(default=false)")
     ]
 
 config.conf.spec["MSEdgeDiscardAnnouncements"] = {setting.configKey: setting.defaultValue for setting in settingItems}
