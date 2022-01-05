@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the MSEdgeDiscardAnnouncements package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MSEdgeDiscardAnnouncements 0.5\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2022-01-05 10:56+0400\n"
+"PO-Revision-Date: 2022-01-05 11:07+0400\n"
+"Last-Translator: \n"
+"Language-Team: Beqa Gozalishvili <beqaprogger@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.11\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: addon\appModules\msedge\__init__.py:41 buildVars.py:23
+msgid "Microsoft Edge discard announcements"
+msgstr "Microsoft Edge discard announcements"
+
+#: addon\appModules\msedge\settings.py:12
+msgid "Announce loading of pages"
+msgstr "Объявлять загрузку страницы"
+
+#: addon\appModules\msedge\settings.py:13
+msgid "Announce page refresh"
+msgstr "Объявлять обновление страницы"
+
+#: addon\appModules\msedge\settings.py:14
+msgid "Announce closing of tab"
+msgstr "Объявлять о закрытии вкладки"
+
+#: addon\appModules\msedge\settings.py:15
+msgid "Announce Opening of new tab"
+msgstr "Объявлять об открытии новой вкладки"
+
+#: addon\appModules\msedge\settings.py:16
+msgid "Announce window opening"
+msgstr "Объявлять об открытии окон"
+
+#: addon\appModules\msedge\settings.py:17
+msgid "Announce starting file download"
+msgstr "Объявлять о начале загрузки файла"
+
+#: addon\appModules\msedge\settings.py:18
+msgid "Announce download completion"
+msgstr "Объявлять о завершении загрузки файла"
+
+#: addon\appModules\msedge\settings.py:19
+msgid "Announce navigating back"
+msgstr "Объявлять о переходе назад в истории"
+
+#: addon\appModules\msedge\settings.py:20
+msgid "Announce removing toolbar buttons"
+msgstr "Объявлять об удалении кнопок панели инструментов"
+
+#: addon\appModules\msedge\settings.py:21
+msgid "Announce of search mode"
+msgstr "Объявление режима поиска"
+
+#: addon\appModules\msedge\settings.py:22
+msgid "Announce availability of search mode"
+msgstr "Объявлять о доступности режима поиска"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"Discards UIA announcements in Microsoft Edge such as page loading and "
+"refreshing, opening and closing tabs and windows."
+msgstr ""
+"Подавляет объявления UIA в Microsoft Edge, такие как загрузка и обновление "
+"страниц, открытие и закрытие вкладок и окон."

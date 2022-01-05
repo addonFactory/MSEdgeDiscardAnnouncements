@@ -2,12 +2,15 @@
 # Copyright (C) 2022 Beqa Gozalishvili
 # Released under GPL 2
 
+import addonHandler
 import appModuleHandler
 import config
 import gui
 import wx
 from .settings import settingItems
     
+addonHandler.initTranslation()
+
 config.conf.spec["MSEdgeDiscardAnnouncements"] = {setting.configKey: setting.defaultValue for setting in settingItems}
 
 class AppModule(appModuleHandler.AppModule):
@@ -35,7 +38,7 @@ class AppModule(appModuleHandler.AppModule):
         nextHandler()
 
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
-    title = "Microsoft Edge discard announcements"
+    title = _("Microsoft Edge discard announcements")
 
     def makeSettings(self, sizer):
         self.config = config.conf["MSEdgeDiscardAnnouncements"]
