@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-06-23 22:26+0300\n"
+"PO-Revision-Date: 2022-06-23 22:40+0300\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian NVDA Community\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1\n"
+"X-Poedit-Basepath: ../../../..\n"
+"X-Poedit-SearchPath-0: buildVars.py\n"
+"X-Poedit-SearchPath-1: addon/appModules/msedge/__init__.py\n"
+"X-Poedit-SearchPath-2: addon/appModules/msedge/settings.py\n"
+
+#: addon/appModules/msedge/__init__.py:41 buildVars.py:23
+msgid "Microsoft Edge discard announcements"
+msgstr "Відхилення оголошень у Microsoft Edge"
+
+#: addon/appModules/msedge/settings.py:12
+msgid "Announce loading of pages"
+msgstr "Оголошувати про завантаження сторінок"
+
+#: addon/appModules/msedge/settings.py:13
+msgid "Announce page refresh"
+msgstr "Оголошувати про оновлення сторінки"
+
+#: addon/appModules/msedge/settings.py:14
+msgid "Announce closing of tab"
+msgstr "Оголошувати про закриття вкладки"
+
+#: addon/appModules/msedge/settings.py:15
+msgid "Announce Opening of new tab"
+msgstr "Оголошувати про відкриття нової вкладки"
+
+#: addon/appModules/msedge/settings.py:16
+msgid "Announce window opening"
+msgstr "Оголошувати відкриття вікна"
+
+#: addon/appModules/msedge/settings.py:17
+msgid "Announce opening of inprivate window"
+msgstr "Оголошувати про відкриття вікна inprivate"
+
+#: addon/appModules/msedge/settings.py:18
+msgid "Announce starting file download"
+msgstr "Оголошувати про початок завантаження файлу"
+
+#: addon/appModules/msedge/settings.py:19
+msgid "Announce download completion"
+msgstr "Оголошувати про завершення завантаження"
+
+#: addon/appModules/msedge/settings.py:20
+msgid "Announce navigating back"
+msgstr "Оголошувати про повернення назад"
+
+#: addon/appModules/msedge/settings.py:21
+msgid "Announce removing toolbar buttons"
+msgstr "Оголошувати про видалення кнопок панелі інструментів"
+
+#: addon/appModules/msedge/settings.py:22
+msgid "Announce of search mode"
+msgstr "Оголошувати про режим пошуку"
+
+#: addon/appModules/msedge/settings.py:23
+msgid "Announce availability of search mode"
+msgstr "Оголошувати про доступність режиму пошуку"
+
+#: addon/appModules/msedge/settings.py:24
+msgid "Announce appearing of notifications"
+msgstr "Оголошувати появу сповіщень"
+
+#: addon/appModules/msedge/settings.py:25
+msgid "Announce indeterminate progress state of current download"
+msgstr "Оголошувати стан невизначеного перебігу поточного завантаження"
+
+#: buildVars.py:26
+msgid ""
+"Discards UIA announcements in Microsoft Edge such as page loading and "
+"refreshing, opening and closing tabs and windows."
+msgstr ""
+"Відхиляє оголошення UIA у Microsoft Edge, такі як завантаження й "
+"оновлення сторінки, відкриття й закриття вкладок і вікон."
