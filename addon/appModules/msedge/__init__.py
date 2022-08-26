@@ -3,6 +3,7 @@
 # Released under GPL 2
 
 import addonHandler
+import api
 import appModuleHandler
 import config
 import gui
@@ -10,8 +11,11 @@ import wx
 from .settings import settingItems
     
 addonHandler.initTranslation()
+addonInstance = addonHandler.getCodeAddon()
+addonName = addonInstance.name
+addonSummary = addonInstance.manifest["summary"]
 
-config.conf.spec["MSEdgeDiscardAnnouncements"] = {setting.configKey: setting.defaultValue for setting in settingItems}
+config.conf.spec[addonName] = {setting.configKey: setting.defaultValue for setting in settingItems}
 
 class AppModule(appModuleHandler.AppModule):
     activityIDs = []
@@ -24,10 +28,12 @@ class AppModule(appModuleHandler.AppModule):
 
     def terminate(self):
         super().terminate()
-        gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MSEdgeDiscardAnnouncementsPanel)
+        categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
+        if (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
+            gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MSEdgeDiscardAnnouncementsPanel)
 
     def getActivityIDsFromConfig(self):
-        edgeConf = config.conf["MSEdgeDiscardAnnouncements"]
+        edgeConf = config.conf[addonName]
         self.activityIDs = [k for k, v in edgeConf.items() if type(v) == bool and v == False]
 
     def event_appModule_gainFocus(self):
@@ -35,13 +41,19 @@ class AppModule(appModuleHandler.AppModule):
 
     def event_UIA_notification(self, obj, nextHandler, activityId=None, **kwargs):
         if activityId in self.activityIDs: return
+        if activityId in ["HubDownloadsNewDownload", "HubDownloadsCompleteState"]:
+            obj = obj
+            while obj and obj.parent.processID == api.getFocusObject().processID:
+                obj = obj.parent
+            if obj.windowHandle != api.getForegroundObject().windowHandle:
+                return
         nextHandler()
 
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
-    title = _("Microsoft Edge discard announcements")
+    title = addonSummary
 
     def makeSettings(self, sizer):
-        self.config = config.conf["MSEdgeDiscardAnnouncements"]
+        self.config = config.conf[addonName]
         self.helper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
         for setting in settingItems:
                 widget = self.helper.addItem(wx.CheckBox(self, label=setting.label, name=setting.configKey))
