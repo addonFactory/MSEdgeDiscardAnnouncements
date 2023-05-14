@@ -29,5 +29,6 @@ settingItems = [
     Settings("Autofill option here", _("Announce autofil suggestions"), "boolean(default=false)"),
     Settings("AutofillSuggestionFilled", _("Announce filling of autofill suggestions"), "boolean(default=false)"),
     Settings("PopupClosed", _("Announce Closing popups like hiding  suggestions of autofill"), "boolean(default=false)"),
+    Settings("AutofillSuggestionHideButton", _("Announce hiding  autofill suggestions"), "boolean(default=false)"),
     Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)")
 ]
