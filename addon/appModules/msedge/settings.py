@@ -26,5 +26,8 @@ settingItems = [
     Settings("SearchModeAvailable", _("Announce availability of search mode"), "boolean(default=false)"),
     Settings("NotificationAppear", _("Announce appearing of notifications"), "boolean(default=false)"),
     Settings("HubDownloadsIndeterminateProgressState", _("Announce indeterminate progress state of current download"), "boolean(default=false)"),
+    Settings("Autofill option here", _("Announce autofil suggestions"), "boolean(default=false)"),
+    Settings("AutofillSuggestionFilled", _("Announce filling of autofill suggestions"), "boolean(default=false)"),
+    Settings("PopupClosed", _("Announce Closing popups like hiding  suggestions of autofill"), "boolean(default=false)"),
     Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)")
 ]
