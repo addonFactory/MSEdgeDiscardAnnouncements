@@ -31,5 +31,6 @@ settingItems = [
     Settings("PopupClosed", _("Announce Closing popups like hiding  suggestions of autofill"), "boolean(default=false)"),
     Settings("AutofillSuggestionHideButton", _("Announce hiding  autofill suggestions"), "boolean(default=false)"),
     Settings("UpdateNotification", _("Announce microsoft edge update availability"), "boolean(default=false)"),
+    Settings("PageZoom", _("Announce zoom changes"), "boolean(default=true)"),
     Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)")
 ]
