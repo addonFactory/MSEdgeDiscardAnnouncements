@@ -2,21 +2,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-08-28 16:22+0300\n"
-"PO-Revision-Date: 2022-08-28 16:25+0300\n"
+"POT-Creation-Date: 2023-06-11 12:32+0300\n"
+"PO-Revision-Date: 2023-06-11 12:40+0300\n"
 "Last-Translator: Ukrainian NVDA Community <vp88.mobile@gmail.com>\n"
 "Language-Team: Ukrainian NVDA Community\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Basepath: ../../../..\n"
 "X-Poedit-SearchPath-0: buildVars.py\n"
 "X-Poedit-SearchPath-1: addon/appModules/msedge/__init__.py\n"
 "X-Poedit-SearchPath-2: addon/appModules/msedge/settings.py\n"
+
+#: addon\appModules\msedge\__init__.py:65
+msgid "&Configure MSEdge notifications"
+msgstr "Налаштувати &відхилення сповіщень у Microsoft Edge"
+
+#: addon\appModules\msedge\donate_dialog.py:22
+msgid "Donate via Paypal"
+msgstr "Пожертвувати через Paypal"
+
+#: addon\appModules\msedge\donate_dialog.py:23
+msgid "Donate via Yoomoney"
+msgstr "Пожертвувати через Yoomoney"
+
+#: addon\appModules\msedge\donate_dialog.py:36
+#, python-brace-format
+msgid "Request for contributions to {name}"
+msgstr "Запит про внески до {name}"
+
+#: addon\appModules\msedge\donate_dialog.py:37
+#, python-brace-format
+msgid ""
+"{name} is a free add-on for NVDA.\n"
+"You can make a donation to its author to support further development of this "
+"and other free projects.\n"
+"Do you want to donate now? Choose one of the available payment methods. You "
+"will be redirected to the corresponding website to complete a donation"
+msgstr ""
+"{name} це безкоштовний додаток для NVDA.\n"
+"Ви можете зробити пожертву його автору, щоб підтримати подальшу розробку "
+"цього та інших безкоштовних проєктів.\n"
+"Хочете пожертвувати зараз? Оберіть один із доступних методів оплати. Вас "
+"буде переспрямовано на відповідний вебсайт для завершення пожертвування"
 
 #: addon\appModules\msedge\settings.py:12
 msgid "Announce loading of pages"
@@ -85,6 +117,36 @@ msgstr "Оголошувати появу сповіщень"
 #: addon\appModules\msedge\settings.py:28
 msgid "Announce indeterminate progress state of current download"
 msgstr "Оголошувати стан невизначеного перебігу поточного завантаження"
+
+#: addon\appModules\msedge\settings.py:29
+msgid "Announce autofil suggestions"
+msgstr "Оголошувати пропозиції автозаповнення"
+
+#: addon\appModules\msedge\settings.py:30
+msgid "Announce filling of autofill suggestions"
+msgstr "Оголосити заповнення пропозицій автозаповнення"
+
+#: addon\appModules\msedge\settings.py:31
+msgid "Announce Closing popups like hiding  suggestions of autofill"
+msgstr ""
+"Оголошувати Закриття спливаючих вікон, наприклад, приховування пропозицій "
+"автозаповнення"
+
+#: addon\appModules\msedge\settings.py:32
+msgid "Announce hiding  autofill suggestions"
+msgstr "Оголошувати приховування пропозицій автозаповнення"
+
+#: addon\appModules\msedge\settings.py:33
+msgid "Announce microsoft edge update availability"
+msgstr "Оголошувати про доступність оновлень для Microsoft edge"
+
+#: addon\appModules\msedge\settings.py:34
+msgid "Announce zoom changes"
+msgstr "Оголошувати про зміни масштабу"
+
+#: addon\appModules\msedge\settings.py:35
+msgid "Show suggestions while typing in addressbar"
+msgstr "Показувати пропозиції під час друку в адресному рядку"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
