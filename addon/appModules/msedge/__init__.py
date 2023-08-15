@@ -6,6 +6,7 @@ import addonHandler
 import api
 import appModuleHandler
 import config
+import eventHandler
 import gui
 from NVDAObjects.UIA import UIA
 import wx
@@ -23,6 +24,7 @@ class AppModule(appModuleHandler.AppModule):
 
     def __init__(self, processID, appName):
         super().__init__(processID, appName)
+        eventHandler.requestEvents("gainFocus",processId=processID,windowClassName="Chrome_WidgetWin_2")
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
         if not (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
             categoryClasses.append(MSEdgeDiscardAnnouncementsPanel)
