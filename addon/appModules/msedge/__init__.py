@@ -5,6 +5,7 @@
 import addonHandler
 import api
 import appModuleHandler
+import browseMode
 import config
 import eventHandler
 import gui
@@ -18,13 +19,21 @@ addonName = addonInstance.name
 addonSummary = addonInstance.manifest["summary"]
 
 config.conf.spec[addonName] = {setting.configKey: setting.defaultValue for setting in settingItems}
+scriptSet = False
 
 class AppModule(appModuleHandler.AppModule):
     activityIDs = []
 
     def __init__(self, processID, appName):
+        global scriptSet
         super().__init__(processID, appName)
-        eventHandler.requestEvents("gainFocus",processId=processID,windowClassName="Chrome_WidgetWin_2")
+        if not scriptSet:
+            eventHandler.requestEvents("gainFocus",processId=processID,windowClassName="Chrome_WidgetWin_2")
+            self.ti = browseMode.BrowseModeTreeInterceptor
+            script = lambda tiObj, gesture: self.script_passThrough(gesture, tiObj)
+            self.ti.script_passThrough = script
+            scriptSet = True
+
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
         if not (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
             categoryClasses.append(MSEdgeDiscardAnnouncementsPanel)
@@ -34,6 +43,14 @@ class AppModule(appModuleHandler.AppModule):
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
         if (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
             gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MSEdgeDiscardAnnouncementsPanel)
+
+    def script_passThrough(self,gesture, tiObj):
+        if not config.conf["virtualBuffers"]["autoFocusFocusableElements"]:
+            tiObj._focusLastFocusableObject()
+            api.processPendingEvents(processEventQueue=True)
+        gesture.send()
+    # Translators: the description for the passThrough script on browseMode documents.
+    script_passThrough.__doc__ = _("Passes gesture through to the application")
 
     def event_NVDAObject_init(self, obj):
         if not "ShowSuggestions" in self.activityIDs:
