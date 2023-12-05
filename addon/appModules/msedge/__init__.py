@@ -2,6 +2,8 @@
 # Copyright (C) 2022-2023 Beqa Gozalishvili
 # Released under GPL 2
 
+import comtypes
+
 import addonHandler
 import api
 import appModuleHandler
@@ -9,6 +11,7 @@ import browseMode
 import config
 import eventHandler
 import gui
+from NVDAObjects.behaviors import EditableTextWithAutoSelectDetection
 from NVDAObjects.UIA import UIA
 import wx
 from .settings import settingItems
@@ -20,6 +23,14 @@ addonSummary = addonInstance.manifest["summary"]
 
 config.conf.spec[addonName] = {setting.configKey: setting.defaultValue for setting in settingItems}
 scriptSet = False
+
+class CustomEditableTextWithAutoSelectDetection(EditableTextWithAutoSelectDetection):
+
+    def event_caret(self, *args, **kwargs):
+        try:
+            return super().event_caret(*args, **kwargs)
+        except comtypes.COMError:
+            pass
 
 class AppModule(appModuleHandler.AppModule):
     activityIDs = []
@@ -43,6 +54,10 @@ class AppModule(appModuleHandler.AppModule):
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
         if (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
             gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MSEdgeDiscardAnnouncementsPanel)
+
+    def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+        if isinstance(obj, UIA) and (obj.UIAAutomationId in ["view_1020"] or obj.UIAElement.CurrentClassName == "Textfield"):
+            clsList.insert(0, CustomEditableTextWithAutoSelectDetection)
 
     def script_passThrough(self,gesture, tiObj):
         if not config.conf["virtualBuffers"]["autoFocusFocusableElements"]:
