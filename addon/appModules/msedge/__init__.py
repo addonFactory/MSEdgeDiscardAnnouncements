@@ -9,6 +9,7 @@ import api
 import appModuleHandler
 import browseMode
 import config
+import controlTypes
 import eventHandler
 import gui
 from NVDAObjects.behaviors import EditableTextWithAutoSelectDetection
@@ -56,8 +57,10 @@ class AppModule(appModuleHandler.AppModule):
             gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MSEdgeDiscardAnnouncementsPanel)
 
     def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-        if isinstance(obj, UIA) and (obj.UIAAutomationId in ["view_1020"] or obj.UIAElement.CurrentClassName == "Textfield"):
+        if isinstance(obj, UIA) and ((obj.role == controlTypes.role.Role.EDITABLETEXT and obj.UIAElement.CurrentClassName  =="OmniboxViewViews") or obj.UIAElement.CurrentClassName == "Textfield"):
             clsList.insert(0, CustomEditableTextWithAutoSelectDetection)
+
+
 
     def script_passThrough(self,gesture, tiObj):
         if not config.conf["virtualBuffers"]["autoFocusFocusableElements"]:
