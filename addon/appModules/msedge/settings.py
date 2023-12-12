@@ -25,6 +25,7 @@ settingItems = [
     Settings("SearchMode", _("Announce of search mode"), "boolean(default=false)"),
     Settings("SearchModeAvailable", _("Announce availability of search mode"), "boolean(default=false)"),
     Settings("NotificationAppear", _("Announce appearing of notifications"), "boolean(default=false)"),
+    Settings("HubDownloadsInProgressState", _("Announce progress state of current download"), "boolean(default=false)"),
     Settings("HubDownloadsIndeterminateProgressState", _("Announce indeterminate progress state of current download"), "boolean(default=false)"),
     Settings("Autofill option here", _("Announce autofil suggestions"), "boolean(default=false)"),
     Settings("AutofillSuggestionFilled", _("Announce filling of autofill suggestions"), "boolean(default=false)"),
