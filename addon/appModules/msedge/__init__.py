@@ -85,7 +85,7 @@ class AppModule(appModuleHandler.AppModule):
 
     def event_UIA_notification(self, obj, nextHandler, activityId=None, **kwargs):
         if activityId in self.activityIDs: return
-        if activityId in ["HubDownloadsNewDownload", "HubDownloadsCompleteState"]:
+        if "HubDownloads" in activityId:
             if not obj.isDescendantOf(api.getForegroundObject()): return
         nextHandler()
 
