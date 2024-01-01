@@ -86,7 +86,7 @@ class AppModule(appModuleHandler.AppModule):
     def event_UIA_notification(self, obj, nextHandler, activityId=None, **kwargs):
         if activityId in self.activityIDs: return
         if "HubDownloads" in activityId:
-            if not obj.isDescendantOf(api.getForegroundObject()): return
+            if obj.appModule == api.getForegroundObject().appModule and not obj.isDescendantOf(api.getForegroundObject()): return
         nextHandler()
 
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
