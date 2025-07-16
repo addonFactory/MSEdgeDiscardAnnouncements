@@ -33,5 +33,9 @@ settingItems = [
     Settings("AutofillSuggestionHideButton", _("Announce hiding  autofill suggestions"), "boolean(default=false)"),
     Settings("UpdateNotification", _("Announce microsoft edge update availability"), "boolean(default=false)"),
     Settings("PageZoom", _("Announce zoom changes"), "boolean(default=true)"),
-    Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)")
+    Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)"),
+    Settings("RemoveSuggestion", _("Announce removing a suggestion"), "boolean(default=true)"),
+    Settings("ContentSettingNotification", _("Announce content setting notifications"), "boolean(default=true)"),
+    Settings("ExcelAutofillSuggestionTriggered", _("Announce triggerring of autofill suggestions"), "boolean(default=true)")
+    Settings("UpdateNotification", _("Announce update notifications"), "boolean(default=true)")
 ]
