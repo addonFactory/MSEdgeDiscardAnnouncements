@@ -36,6 +36,6 @@ settingItems = [
     Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)"),
     Settings("RemoveSuggestion", _("Announce removing a suggestion"), "boolean(default=true)"),
     Settings("ContentSettingNotification", _("Announce content setting notifications"), "boolean(default=true)"),
-    Settings("ExcelAutofillSuggestionTriggered", _("Announce triggerring of autofill suggestions"), "boolean(default=true)")
+    Settings("ExcelAutofillSuggestionTriggered", _("Announce triggerring of autofill suggestions"), "boolean(default=true)"),
     Settings("UpdateNotification", _("Announce update notifications"), "boolean(default=true)")
 ]
