@@ -23,7 +23,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Discards UIA announcements in Microsoft Edge such as page loading and refreshing, opening and closing tabs and windows and more."""),
 	# version
-	"addon_version": "0.10.0",
+	"addon_version": "0.10.1",
 	# Author(s)
 	"addon_author": "Beka Gozalishvili <beqaprogger@gmail.com>",
 	# URL for the add-on documentation support
