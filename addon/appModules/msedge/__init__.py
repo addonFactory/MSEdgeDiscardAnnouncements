@@ -13,7 +13,7 @@ import controlTypes
 import eventHandler
 import gui
 from NVDAObjects.behaviors import EditableTextWithAutoSelectDetection
-from NVDAObjects.UIA import UIA
+from NVDAObjects.UIA import UIA, UIATextInfo
 import wx
 from .settings import settingItems
     
@@ -25,7 +25,17 @@ addonSummary = addonInstance.manifest["summary"]
 config.conf.spec[addonName] = {setting.configKey: setting.defaultValue for setting in settingItems}
 scriptSet = False
 
+
+class CustomUIATextInfo(UIATextInfo):
+    def compareEndPoints(self, *args, **kwargs):
+        try:
+            return super().compareEndPoints(*args, **kwargs)
+        except comtypes.COMError:
+            return 0
+
+
 class CustomEditableTextWithAutoSelectDetection(EditableTextWithAutoSelectDetection):
+    TextInfo = CustomUIATextInfo
 
     def event_caret(self, *args, **kwargs):
         try:
