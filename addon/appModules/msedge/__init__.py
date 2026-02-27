@@ -13,7 +13,7 @@ import controlTypes
 import eventHandler
 import gui
 from NVDAObjects.behaviors import EditableTextWithAutoSelectDetection
-from NVDAObjects.UIA import UIA
+from NVDAObjects.UIA import UIA, UIATextInfo
 import wx
 from .settings import settingItems
     
@@ -25,7 +25,17 @@ addonSummary = addonInstance.manifest["summary"]
 config.conf.spec[addonName] = {setting.configKey: setting.defaultValue for setting in settingItems}
 scriptSet = False
 
+
+class CustomUIATextInfo(UIATextInfo):
+    def compareEndPoints(self, *args, **kwargs):
+        try:
+            return super().compareEndPoints(*args, **kwargs)
+        except comtypes.COMError:
+            return 0
+
+
 class CustomEditableTextWithAutoSelectDetection(EditableTextWithAutoSelectDetection):
+    TextInfo = CustomUIATextInfo
 
     def event_caret(self, *args, **kwargs):
         try:
@@ -37,15 +47,7 @@ class AppModule(appModuleHandler.AppModule):
     activityIDs = []
 
     def __init__(self, processID, appName):
-        global scriptSet
         super().__init__(processID, appName)
-        if not scriptSet:
-            eventHandler.requestEvents("gainFocus",processId=processID,windowClassName="Chrome_WidgetWin_2")
-            self.ti = browseMode.BrowseModeTreeInterceptor
-            script = lambda tiObj, gesture: self.script_passThrough(gesture, tiObj)
-            self.ti.script_passThrough = script
-            scriptSet = True
-
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
         if not (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
             categoryClasses.append(MSEdgeDiscardAnnouncementsPanel)
@@ -59,16 +61,6 @@ class AppModule(appModuleHandler.AppModule):
     def chooseNVDAObjectOverlayClasses(self, obj, clsList):
         if isinstance(obj, UIA) and ((obj.role == controlTypes.role.Role.EDITABLETEXT and obj.UIAElement.CurrentClassName  =="OmniboxViewViews") or obj.UIAElement.CurrentClassName == "Textfield"):
             clsList.insert(0, CustomEditableTextWithAutoSelectDetection)
-
-
-
-    def script_passThrough(self,gesture, tiObj):
-        if not config.conf["virtualBuffers"]["autoFocusFocusableElements"]:
-            tiObj._focusLastFocusableObject()
-            api.processPendingEvents(processEventQueue=True)
-        gesture.send()
-    # Translators: the description for the passThrough script on browseMode documents.
-    script_passThrough.__doc__ = _("Passes gesture through to the application")
 
     def event_NVDAObject_init(self, obj):
         if not "ShowSuggestions" in self.activityIDs:
