@@ -6,24 +6,19 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 'MSEdgeDiscardAnnouncements' '0.10'\n"
+"Project-Id-Version: 'MSEdgeDiscardAnnouncements' '0.10.3'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-02-25 17:52+0800\n"
-"PO-Revision-Date: 2025-02-26 14:35+0800\n"
+"POT-Creation-Date: 2026-02-27 04:44+0800\n"
+"PO-Revision-Date: 2026-02-27 20:53+0800\n"
 "Last-Translator: Alan <alanzhangmw@outlook.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
-#. Translators: the description for the passThrough script on browseMode documents.
-#: addon\appModules\msedge\__init__.py:71
-msgid "Passes gesture through to the application"
-msgstr "将手势传递给应用程序"
-
-#: addon\appModules\msedge\__init__.py:98
+#: addon\appModules\msedge\__init__.py:90
 msgid "&Configure MSEdge notifications"
 msgstr "配置MSEdge通知(&C)"
 
@@ -36,10 +31,12 @@ msgid "Donate via Yoomoney"
 msgstr "通过Yoomoney捐赠"
 
 #: addon\appModules\msedge\donate_dialog.py:36
+#, python-brace-format
 msgid "Request for contributions to {name}"
 msgstr "请求为 {name} 捐款"
 
 #: addon\appModules\msedge\donate_dialog.py:37
+#, python-brace-format
 msgid ""
 "{name} is a free add-on for NVDA.\n"
 "You can make a donation to its author to support further development of this "
@@ -151,18 +148,33 @@ msgstr "宣布更改缩放"
 msgid "Show suggestions while typing in addressbar"
 msgstr "在地址栏中键入时显示建议"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: buildVars.py:23
-msgid "Microsoft Edge discard announcements"
-msgstr "Microsoft Edge 通知过滤"
+#: addon\appModules\msedge\settings.py:37
+msgid "Announce removing a suggestion"
+msgstr "宣布删除建议"
+
+#: addon\appModules\msedge\settings.py:38
+msgid "Announce content setting notifications"
+msgstr "宣布内容设置通知"
+
+#: addon\appModules\msedge\settings.py:39
+msgid "Announce triggerring of autofill suggestions"
+msgstr "宣布自动填充建议的触发"
+
+#: addon\appModules\msedge\settings.py:40
+msgid "Announce update notifications"
+msgstr "宣布更新通知"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
+#: buildVars.py:24
 msgid ""
 "Discards UIA announcements in Microsoft Edge such as page loading and "
-"refreshing, opening and closing tabs and windows."
+"refreshing, opening and closing tabs and windows and more."
 msgstr ""
 "过滤掉 Microsoft Edge 中的UIA通知，如页面加载和刷新、打开或关闭选项卡和窗口。"
+
+#~ msgid "Passes gesture through to the application"
+#~ msgstr "将手势传递给应用程序"
+
+#~ msgid "Microsoft Edge discard announcements"
+#~ msgstr "Microsoft Edge 通知过滤"
