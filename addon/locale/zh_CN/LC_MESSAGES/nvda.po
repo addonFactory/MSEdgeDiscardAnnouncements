@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 'MSEdgeDiscardAnnouncements' '0.10.3'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-02-27 04:44+0800\n"
+"PO-Revision-Date: 2026-02-27 20:53+0800\n"
+"Last-Translator: Alan <alanzhangmw@outlook.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: addon\appModules\msedge\__init__.py:90
+msgid "&Configure MSEdge notifications"
+msgstr "配置MSEdge通知(&C)"
+
+#: addon\appModules\msedge\donate_dialog.py:22
+msgid "Donate via Paypal"
+msgstr "通过 Paypal 捐赠"
+
+#: addon\appModules\msedge\donate_dialog.py:23
+msgid "Donate via Yoomoney"
+msgstr "通过Yoomoney捐赠"
+
+#: addon\appModules\msedge\donate_dialog.py:36
+#, python-brace-format
+msgid "Request for contributions to {name}"
+msgstr "请求为 {name} 捐款"
+
+#: addon\appModules\msedge\donate_dialog.py:37
+#, python-brace-format
+msgid ""
+"{name} is a free add-on for NVDA.\n"
+"You can make a donation to its author to support further development of this "
+"and other free projects.\n"
+"Do you want to donate now? Choose one of the available payment methods. You "
+"will be redirected to the corresponding website to complete a donation"
+msgstr ""
+"{name} 是NVDA的免费插件。n\n"
+"\\您可以向其作者捐款，以支持此项目和其他免费项目的进一步发展。\n"
+"你现在想捐款吗？选择一种可用的付款方式。您将被重定向到相应的网站以完成捐赠"
+
+#: addon\appModules\msedge\settings.py:12
+msgid "Announce loading of pages"
+msgstr "宣布页面加载"
+
+#: addon\appModules\msedge\settings.py:13
+msgid "Announce page refresh"
+msgstr "宣布页面刷新"
+
+#: addon\appModules\msedge\settings.py:14
+msgid "Announce closing of tab"
+msgstr "宣布关闭标签页"
+
+#: addon\appModules\msedge\settings.py:15
+msgid "Announce Opening of new tab"
+msgstr "宣布打开新标签页"
+
+#: addon\appModules\msedge\settings.py:16
+msgid "Announce window opening"
+msgstr "宣布打开窗口"
+
+#: addon\appModules\msedge\settings.py:17
+msgid "Announce opening of inprivate window"
+msgstr "宣布打开隐私窗口"
+
+#: addon\appModules\msedge\settings.py:18
+msgid "Announce starting file download"
+msgstr "宣布文件开始下载"
+
+#: addon\appModules\msedge\settings.py:19
+msgid "Announce download completion"
+msgstr "宣布下载完成"
+
+#: addon\appModules\msedge\settings.py:20
+msgid "Announce navigating back"
+msgstr "宣布向前导航"
+
+#: addon\appModules\msedge\settings.py:21
+msgid "Announce navigating forward"
+msgstr "宣布向后导航"
+
+#: addon\appModules\msedge\settings.py:22
+msgid "Announce if there is no previous page to navigate"
+msgstr "宣布没有前一个页面可导航"
+
+#: addon\appModules\msedge\settings.py:23
+msgid "Announce if there is no next page to navigate"
+msgstr "宣布没有后一个页面可导航"
+
+#: addon\appModules\msedge\settings.py:24
+msgid "Announce removing toolbar buttons"
+msgstr "宣布删除工具栏按钮"
+
+#: addon\appModules\msedge\settings.py:25
+msgid "Announce of search mode"
+msgstr "宣布搜索模式"
+
+#: addon\appModules\msedge\settings.py:26
+msgid "Announce availability of search mode"
+msgstr "宣布搜索模式可用"
+
+#: addon\appModules\msedge\settings.py:27
+msgid "Announce appearing of notifications"
+msgstr "宣布出现通知"
+
+#: addon\appModules\msedge\settings.py:28
+msgid "Announce progress state of current download"
+msgstr "宣布当前下载的进度状态"
+
+#: addon\appModules\msedge\settings.py:29
+msgid "Announce indeterminate progress state of current download"
+msgstr "宣布当前下载的不确定进度状态"
+
+#: addon\appModules\msedge\settings.py:30
+msgid "Announce autofil suggestions"
+msgstr "宣布自动填充建议"
+
+#: addon\appModules\msedge\settings.py:31
+msgid "Announce filling of autofill suggestions"
+msgstr "宣布填写自动填充建议"
+
+#: addon\appModules\msedge\settings.py:32
+msgid "Announce Closing popups like hiding  suggestions of autofill"
+msgstr "宣布关闭弹出窗口，如隐藏自动填充建议"
+
+#: addon\appModules\msedge\settings.py:33
+msgid "Announce hiding  autofill suggestions"
+msgstr "宣布隐藏自动填充建议"
+
+#: addon\appModules\msedge\settings.py:34
+msgid "Announce microsoft edge update availability"
+msgstr "宣布 Microsoft Edge 更新可用"
+
+#: addon\appModules\msedge\settings.py:35
+msgid "Announce zoom changes"
+msgstr "宣布更改缩放"
+
+#: addon\appModules\msedge\settings.py:36
+msgid "Show suggestions while typing in addressbar"
+msgstr "在地址栏中键入时显示建议"
+
+#: addon\appModules\msedge\settings.py:37
+msgid "Announce removing a suggestion"
+msgstr "宣布删除建议"
+
+#: addon\appModules\msedge\settings.py:38
+msgid "Announce content setting notifications"
+msgstr "宣布内容设置通知"
+
+#: addon\appModules\msedge\settings.py:39
+msgid "Announce triggerring of autofill suggestions"
+msgstr "宣布自动填充建议的触发"
+
+#: addon\appModules\msedge\settings.py:40
+msgid "Announce update notifications"
+msgstr "宣布更新通知"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:24
+msgid ""
+"Discards UIA announcements in Microsoft Edge such as page loading and "
+"refreshing, opening and closing tabs and windows and more."
+msgstr ""
+"过滤掉 Microsoft Edge 中的UIA通知，如页面加载和刷新、打开或关闭选项卡和窗口。"
+
+#~ msgid "Passes gesture through to the application"
+#~ msgstr "将手势传递给应用程序"
+
+#~ msgid "Microsoft Edge discard announcements"
+#~ msgstr "Microsoft Edge 通知过滤"
