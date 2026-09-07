@@ -7,14 +7,11 @@ import comtypes
 import addonHandler
 import api
 import appModuleHandler
-import browseMode
 import config
 import controlTypes
-import eventHandler
 import gui
 from NVDAObjects.behaviors import EditableTextWithAutoSelectDetection
 from NVDAObjects.UIA import UIA, UIATextInfo
-import wx
 from .settings import settingItems
     
 addonHandler.initTranslation()
@@ -49,7 +46,7 @@ class AppModule(appModuleHandler.AppModule):
     def __init__(self, processID, appName):
         super().__init__(processID, appName)
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
-        if not (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
+        if MSEdgeDiscardAnnouncementsPanel not in categoryClasses:
             categoryClasses.append(MSEdgeDiscardAnnouncementsPanel)
 
     def terminate(self):
@@ -63,22 +60,25 @@ class AppModule(appModuleHandler.AppModule):
             clsList.insert(0, CustomEditableTextWithAutoSelectDetection)
 
     def event_NVDAObject_init(self, obj):
-        if not "ShowSuggestions" in self.activityIDs:
+        if "ShowSuggestions" not in self.activityIDs:
             return
         if isinstance(obj, UIA) and obj.UIAElement.CurrentClassName == "OmniboxResultView":
             obj.isDescendantOf = lambda obj: False
 
     def getActivityIDsFromConfig(self):
         edgeConf = config.conf[addonName]
-        self.activityIDs = [k for k, v in edgeConf.items() if type(v) == bool and v == False]
+        self.activityIDs = [k for k, v in edgeConf.items() if isinstance(v, bool) and not v]
 
     def event_appModule_gainFocus(self):
         self.getActivityIDsFromConfig()
 
     def event_UIA_notification(self, obj, nextHandler, activityId=None, **kwargs):
-        if activityId in self.activityIDs: return
+        if activityId in self.activityIDs:
+            return
         if "HubDownloads" in activityId:
-            if obj.appModule == api.getForegroundObject().appModule and not obj.isDescendantOf(api.getForegroundObject()): return
+            foreground = api.getForegroundObject()
+            if obj.appModule == foreground.appModule and not obj.isDescendantOf(foreground):
+                return
         nextHandler()
 
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
