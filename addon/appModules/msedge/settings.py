@@ -74,4 +74,16 @@ settingItems = [
         "boolean(default=true)",
     ),
     Settings("UpdateNotification", _("Announce update notifications"), "boolean(default=true)"),
+    Settings(
+        "Fullscreen",
+        _("Announce entering and exiting full screen"),
+        "boolean(default=true)",
+        ("EnteringFullscreen", "ExitingFullscreen"),
+    ),
+    Settings(
+        "ShyUI",
+        _("Announce showing and hiding of toolbars in full screen"),
+        "boolean(default=false)",
+        ("ShyUIVisible", "ShyUIHidden"),
+    ),
 ]
