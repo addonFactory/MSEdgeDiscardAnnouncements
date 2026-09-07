@@ -1,0 +1,55 @@
+# Configuration for this NVDA add-on, migrated from buildVars.py.
+#
+# The comment directly above a translatable string is that string's note to
+# translators, and is carried into the generated .pot file.
+
+[addon]
+# add-on Name/identifier, internal for NVDA
+name = "MSEdgeDiscardAnnouncements"
+# Add-on summary, usually the user visible name of the addon.
+summary = "Microsoft Edge discard announcements"
+
+# Add-on description
+# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+description = "Discards UIA announcements in Microsoft Edge such as page loading and refreshing, opening and closing tabs and windows and more."
+
+# version
+version = "0.11.0"
+# Author(s)
+author = "Beka Gozalishvili <beqaprogger@gmail.com>"
+# URL for the add-on documentation support
+url = "https://github.com/addonfactory/MSEdgeDiscardAnnouncements"
+# URL for the add-on repository where the source code can be found
+sourceURL = "https://github.com/addonFactory/MSEdgeDiscardAnnouncements"
+# Documentation file name
+docFileName = "readme.html"
+# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
+minimumNVDAVersion = "2024.1.0"
+# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
+lastTestedNVDAVersion = "2026.2.0"
+# Add-on update channel (default is None, denoting stable releases,
+# and for development releases, use "dev".)
+# Do not change unless you know what you are doing!
+updateChannel = "stable"
+# Add-on license such as GPL 2
+license = "GPL v2"
+# URL for the license document the ad-on is licensed under
+licenseURL = "https://www.gnu.org/licenses/gpl-2.0.html"
+
+[build]
+# The Python files that make up this add-on, scanned for translatable strings.
+pythonSources = ["addon/appModules/msedge/**/*.py"]
+
+# Files inside the `addon` directory to leave out of the built add-on.
+excludedFiles = []
+
+[l10n]
+# The language this add-on is written in.
+baseLanguage = "en"
+
+# Extra files to scan for translatable strings.
+extraSources = []
+
+[docs]
+# Python-Markdown extensions used when rendering documentation.
+markdownExtensions = []
