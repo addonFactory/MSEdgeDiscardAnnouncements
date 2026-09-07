@@ -74,7 +74,12 @@ class AppModule(appModuleHandler.AppModule):
 
     def getActivityIDsFromConfig(self):
         edgeConf = config.conf[addonName]
-        self.activityIDs = [k for k, v in edgeConf.items() if isinstance(v, bool) and not v]
+        self.activityIDs = [
+            activityID
+            for setting in settingItems
+            if not edgeConf[setting.configKey]
+            for activityID in setting.notificationIDs
+        ]
 
     def event_appModule_gainFocus(self):
         self.getActivityIDsFromConfig()

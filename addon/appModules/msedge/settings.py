@@ -3,11 +3,22 @@
 # Released under GPL 2
 
 import addonHandler
-from collections import namedtuple
+from typing import NamedTuple
 
 addonHandler.initTranslation()
 
-Settings = namedtuple("Settings", "configKey, label, defaultValue")
+
+class Settings(NamedTuple):
+    configKey: str
+    label: str
+    defaultValue: str
+    activityIDs: tuple[str, ...] = ()
+
+    @property
+    def notificationIDs(self) -> tuple[str, ...]:
+        return self.activityIDs or (self.configKey,)
+
+
 settingItems = [
     Settings("PageLoading", _("Announce loading of pages"), "boolean(default=false)"),
     Settings("RefreshingPage", _("Announce page refresh"), "boolean(default=false)"),
@@ -29,6 +40,7 @@ settingItems = [
         "HubDownloadsInProgressState",
         _("Announce progress state of current download"),
         "boolean(default=false)",
+        ("HubDownloadsInProgressState", "HubDownloadsIndividualProgressState"),
     ),
     Settings(
         "HubDownloadsIndeterminateProgressState",
