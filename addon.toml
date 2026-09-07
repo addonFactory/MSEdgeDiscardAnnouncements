@@ -14,7 +14,7 @@ summary = "Microsoft Edge discard announcements"
 description = "Discards UIA announcements in Microsoft Edge such as page loading and refreshing, opening and closing tabs and windows and more."
 
 # version
-version = "0.10.3"
+version = "0.11.0"
 # Author(s)
 author = "Beka Gozalishvili <beqaprogger@gmail.com>"
 # URL for the add-on documentation support
@@ -24,9 +24,9 @@ sourceURL = "https://github.com/addonFactory/MSEdgeDiscardAnnouncements"
 # Documentation file name
 docFileName = "readme.html"
 # Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
-minimumNVDAVersion = "2019.3.0"
+minimumNVDAVersion = "2024.1.0"
 # Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-lastTestedNVDAVersion = "2025.1.0"
+lastTestedNVDAVersion = "2026.2.0"
 # Add-on update channel (default is None, denoting stable releases,
 # and for development releases, use "dev".)
 # Do not change unless you know what you are doing!
@@ -38,7 +38,7 @@ licenseURL = "https://www.gnu.org/licenses/gpl-2.0.html"
 
 [build]
 # The Python files that make up this add-on, scanned for translatable strings.
-pythonSources = ["addon/appModules/msedge/*.py"]
+pythonSources = ["addon/appModules/msedge/**/*.py"]
 
 # Files inside the `addon` directory to leave out of the built add-on.
 excludedFiles = []
