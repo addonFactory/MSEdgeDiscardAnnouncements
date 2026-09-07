@@ -1,7 +1,7 @@
-#donatedialog.py
+# donatedialog.py
 # Copyright (C) 2022-2023 Beqa Gozalishvili <beqaprogger@gmail.com>
-#This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details.
 
 import addonHandler
 import gui
@@ -16,7 +16,9 @@ class DonationDialog(gui.nvdaControls.MessageDialog):
     PAYPAL_URL = "https://paypal.me/gozaltech"
 
     def __init__(self, parent, title, message):
-        super().__init__(parent, title, message, dialogType=gui.nvdaControls.MessageDialog.DIALOG_TYPE_WARNING)
+        super().__init__(
+            parent, title, message, dialogType=gui.nvdaControls.MessageDialog.DIALOG_TYPE_WARNING
+        )
 
     def _addButtons(self, buttonHelper):
         paypalBtn = buttonHelper.addButton(self, label=_("Donate via Paypal"), name="PAYPAL_URL")
@@ -32,9 +34,12 @@ class DonationDialog(gui.nvdaControls.MessageDialog):
         webbrowser.open(donateUrl)
         self.EndModal(wx.OK)
 
+
 def requestDonations(addonName, parentWindow):
     title = _("Request for contributions to {name}").format(name=addonName)
-    message = _("{name} is a free add-on for NVDA.\n"
-    "You can make a donation to its author to support further development of this and other free projects.\n"
-    "Do you want to donate now? Choose one of the available payment methods. You will be redirected to the corresponding website to complete a donation").format(name=addonName)
+    message = _(
+        "{name} is a free add-on for NVDA.\n"
+        "You can make a donation to its author to support further development of this and other free projects.\n"
+        "Do you want to donate now? Choose one of the available payment methods. You will be redirected to the corresponding website to complete a donation"
+    ).format(name=addonName)
     return DonationDialog(parentWindow, title, message).ShowModal()

@@ -25,17 +25,41 @@ settingItems = [
     Settings("SearchMode", _("Announce of search mode"), "boolean(default=false)"),
     Settings("SearchModeAvailable", _("Announce availability of search mode"), "boolean(default=false)"),
     Settings("NotificationAppear", _("Announce appearing of notifications"), "boolean(default=false)"),
-    Settings("HubDownloadsInProgressState", _("Announce progress state of current download"), "boolean(default=false)"),
-    Settings("HubDownloadsIndeterminateProgressState", _("Announce indeterminate progress state of current download"), "boolean(default=false)"),
+    Settings(
+        "HubDownloadsInProgressState",
+        _("Announce progress state of current download"),
+        "boolean(default=false)",
+    ),
+    Settings(
+        "HubDownloadsIndeterminateProgressState",
+        _("Announce indeterminate progress state of current download"),
+        "boolean(default=false)",
+    ),
     Settings("Autofill option here", _("Announce autofil suggestions"), "boolean(default=false)"),
-    Settings("AutofillSuggestionFilled", _("Announce filling of autofill suggestions"), "boolean(default=false)"),
-    Settings("PopupClosed", _("Announce Closing popups like hiding  suggestions of autofill"), "boolean(default=false)"),
-    Settings("AutofillSuggestionHideButton", _("Announce hiding  autofill suggestions"), "boolean(default=false)"),
-    Settings("UpdateNotification", _("Announce microsoft edge update availability"), "boolean(default=false)"),
+    Settings(
+        "AutofillSuggestionFilled", _("Announce filling of autofill suggestions"), "boolean(default=false)"
+    ),
+    Settings(
+        "PopupClosed",
+        _("Announce Closing popups like hiding  suggestions of autofill"),
+        "boolean(default=false)",
+    ),
+    Settings(
+        "AutofillSuggestionHideButton", _("Announce hiding  autofill suggestions"), "boolean(default=false)"
+    ),
+    Settings(
+        "UpdateNotification", _("Announce microsoft edge update availability"), "boolean(default=false)"
+    ),
     Settings("PageZoom", _("Announce zoom changes"), "boolean(default=true)"),
     Settings("ShowSuggestions", _("Show suggestions while typing in addressbar"), "boolean(default=true)"),
     Settings("RemoveSuggestion", _("Announce removing a suggestion"), "boolean(default=true)"),
-    Settings("ContentSettingNotification", _("Announce content setting notifications"), "boolean(default=true)"),
-    Settings("ExcelAutofillSuggestionTriggered", _("Announce triggerring of autofill suggestions"), "boolean(default=true)"),
-    Settings("UpdateNotification", _("Announce update notifications"), "boolean(default=true)")
+    Settings(
+        "ContentSettingNotification", _("Announce content setting notifications"), "boolean(default=true)"
+    ),
+    Settings(
+        "ExcelAutofillSuggestionTriggered",
+        _("Announce triggerring of autofill suggestions"),
+        "boolean(default=true)",
+    ),
+    Settings("UpdateNotification", _("Announce update notifications"), "boolean(default=true)"),
 ]

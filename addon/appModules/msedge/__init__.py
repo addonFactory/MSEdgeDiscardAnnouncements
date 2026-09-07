@@ -13,7 +13,7 @@ import gui
 from NVDAObjects.behaviors import EditableTextWithAutoSelectDetection
 from NVDAObjects.UIA import UIA, UIATextInfo
 from .settings import settingItems
-    
+
 addonHandler.initTranslation()
 addonInstance = addonHandler.getCodeAddon()
 addonName = addonInstance.name
@@ -40,6 +40,7 @@ class CustomEditableTextWithAutoSelectDetection(EditableTextWithAutoSelectDetect
         except comtypes.COMError:
             pass
 
+
 class AppModule(appModuleHandler.AppModule):
     activityIDs = []
 
@@ -52,11 +53,17 @@ class AppModule(appModuleHandler.AppModule):
     def terminate(self):
         super().terminate()
         categoryClasses = gui.settingsDialogs.NVDASettingsDialog.categoryClasses
-        if (MSEdgeDiscardAnnouncementsPanel in categoryClasses):
+        if MSEdgeDiscardAnnouncementsPanel in categoryClasses:
             gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MSEdgeDiscardAnnouncementsPanel)
 
     def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-        if isinstance(obj, UIA) and ((obj.role == controlTypes.role.Role.EDITABLETEXT and obj.UIAElement.CurrentClassName  =="OmniboxViewViews") or obj.UIAElement.CurrentClassName == "Textfield"):
+        if isinstance(obj, UIA) and (
+            (
+                obj.role == controlTypes.role.Role.EDITABLETEXT
+                and obj.UIAElement.CurrentClassName == "OmniboxViewViews"
+            )
+            or obj.UIAElement.CurrentClassName == "Textfield"
+        ):
             clsList.insert(0, CustomEditableTextWithAutoSelectDetection)
 
     def event_NVDAObject_init(self, obj):
@@ -81,6 +88,7 @@ class AppModule(appModuleHandler.AppModule):
                 return
         nextHandler()
 
+
 class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
     title = addonSummary
 
@@ -89,9 +97,16 @@ class MSEdgeDiscardAnnouncementsPanel(gui.settingsDialogs.SettingsPanel):
         sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
         notificationsLabel = _("&Configure MSEdge notifications")
         self.settingChoices = [setting.label for setting in settingItems]
-        self.settingList=sHelper.addLabeledControl(notificationsLabel, gui.nvdaControls.CustomCheckListBox, choices=self.settingChoices)
-        self.settingList.CheckedItems = [index for index, setting in enumerate(settingItems) if self.config[setting.configKey]]
+        self.settingList = sHelper.addLabeledControl(
+            notificationsLabel, gui.nvdaControls.CustomCheckListBox, choices=self.settingChoices
+        )
+        self.settingList.CheckedItems = [
+            index for index, setting in enumerate(settingItems) if self.config[setting.configKey]
+        ]
         self.settingList.Select(0)
 
     def onSave(self):
-                [self.config.__setitem__(setting.configKey, self.settingList.IsChecked(index)) for index, setting in enumerate(settingItems)]
+        [
+            self.config.__setitem__(setting.configKey, self.settingList.IsChecked(index))
+            for index, setting in enumerate(settingItems)
+        ]
