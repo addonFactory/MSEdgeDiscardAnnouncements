@@ -1,15 +1,34 @@
+[project]
+name = "msEdgeDiscardAnnouncements-dev"
+version = "0.0.0"
+description = "Development environment for the Microsoft edge discard announcements NVDA add-on"
+requires-python = ">=3.13"
+dependencies = [
+    "nvda-addon-kit",
+]
+
+[dependency-groups]
+lint = [
+    "ruff==0.16.5",
+]
+dev = [
+    { include-group = "lint" },
+]
+
 [tool.ruff]
+line-length = 110
+
 builtins = [
     "_",
     "ngettext",
     "pgettext",
     "npgettext",
 ]
+
+[tool.ruff.format]
+indent-style = "space"
+line-ending = "lf"
+
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F"]
 ignore = ["N802", "N803"]
-
-[tool.ruff.lint.per-file-ignores]
-# sconstruct contains many inbuilt functions not recognised by the lint,
-# so ignore F821.
-"sconstruct" = ["F821"]
