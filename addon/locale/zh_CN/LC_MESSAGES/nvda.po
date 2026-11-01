@@ -1,0 +1,383 @@
+# Simplified Chinese translation for MSEdgeDiscardAnnouncements.
+# Copyright (C) 2026 Beka Gozalishvili <beqaprogger@gmail.com>
+# This file is distributed under the same license as the
+# MSEdgeDiscardAnnouncements project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MSEdgeDiscardAnnouncements 0.11.0\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2026-09-07 13:28+0000\n"
+"PO-Revision-Date: 2026-11-01 09:15+0800\n"
+"Last-Translator: XHG20033 <xhg20033@outlook.com>\n"
+"Language-Team: Simplified Chinese\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+"X-Generator: Poedit 3.10\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#: addon.toml:10
+msgid "Microsoft Edge discard announcements"
+msgstr "Microsoft Edge 通知屏蔽"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on
+#. information from add-ons manager
+#: addon.toml:14
+msgid ""
+"Discards UIA announcements in Microsoft Edge such as page loading and "
+"refreshing, opening and closing tabs and windows and more."
+msgstr ""
+"屏蔽 Microsoft Edge 中的 UIA 通知，例如页面加载与刷新、打开与关闭标签页和窗口"
+"等。"
+
+#: addon/appModules/msedge/donate_dialog.py:24
+msgid "Donate via Paypal"
+msgstr "通过 Paypal 捐赠"
+
+#: addon/appModules/msedge/donate_dialog.py:25
+msgid "Donate via Yoomoney"
+msgstr "通过 Yoomoney 捐赠"
+
+#: addon/appModules/msedge/donate_dialog.py:39
+#, python-brace-format
+msgid "Request for contributions to {name}"
+msgstr "欢迎为 {name} 提供捐助"
+
+#: addon/appModules/msedge/donate_dialog.py:41
+#, python-brace-format
+msgid ""
+"{name} is a free add-on for NVDA.\n"
+"You can make a donation to its author to support further development of this "
+"and other free projects.\n"
+"Do you want to donate now? Choose one of the available payment methods. You "
+"will be redirected to the corresponding website to complete a donation"
+msgstr ""
+"{name} 是 NVDA 的一款免费插件。\n"
+"您可以向其作者捐赠，以支持本插件及其他免费项目的后续开发。\n"
+"要现在捐赠吗？请选择一种可用的支付方式。您将被跳转到相应网站以完成捐赠"
+
+#. Translators: The label of a control to choose the pitch of a beep.
+#: addon/appModules/msedge/interface/beepDialogs.py:15
+msgid "Fre&quency (Hz)"
+msgstr "频率(&Q) (Hz)"
+
+#. Translators: The label of a control to choose how long a beep lasts.
+#: addon/appModules/msedge/interface/beepDialogs.py:17
+msgid "&Length (ms)"
+msgstr "长度(&L) (ms)"
+
+#. Translators: The label of a control to choose the volume of a beep in the
+#. left channel.
+#: addon/appModules/msedge/interface/beepDialogs.py:19
+msgid "L&eft volume (%)"
+msgstr "左声道音量(&E) (%)"
+
+#. Translators: The label of a control to choose the volume of a beep in the
+#. right channel.
+#: addon/appModules/msedge/interface/beepDialogs.py:21
+msgid "&Right volume (%)"
+msgstr "右声道音量(&R) (%)"
+
+#. Translators: The label of a control to choose the silence following a beep.
+#: addon/appModules/msedge/interface/beepDialogs.py:23
+msgid "&Pause after this beep (ms)"
+msgstr "该提示音后的停顿(&P) (ms)"
+
+#. Translators: How one beep of a beep pattern is presented in the list of
+#. beeps.
+#: addon/appModules/msedge/interface/beepDialogs.py:30
+#, python-brace-format
+msgid ""
+"{frequency} Hz, {length} ms, left {leftVolume}%, right {rightVolume}%, pause "
+"{pause} ms"
+msgstr ""
+"{frequency} Hz，{length} ms，左 {leftVolume}%，右 {rightVolume}%，停顿 "
+"{pause} ms"
+
+#. Translators: The title of the dialog to add or edit one beep of a beep
+#. pattern.
+#: addon/appModules/msedge/interface/beepDialogs.py:63
+msgid "Beep"
+msgstr "提示音"
+
+#. Translators: The label of a button to hear the beep which is being edited.
+#: addon/appModules/msedge/interface/beepDialogs.py:77
+msgid "&Test"
+msgstr "试听(&T)"
+
+#. Translators: The title of the dialog to build a beep pattern, {name} is the
+#. notification.
+#: addon/appModules/msedge/interface/beepDialogs.py:90
+#, python-brace-format
+msgid "Beeps for {name}"
+msgstr "{name} 的提示音"
+
+#. Translators: The label of the list of beeps played for a notification.
+#: addon/appModules/msedge/interface/beepDialogs.py:95
+msgid "&Beeps"
+msgstr "提示音序列(&B)"
+
+#. Translators: The label of a button to add a beep to the pattern.
+#: addon/appModules/msedge/interface/beepDialogs.py:103
+msgid "&Add..."
+msgstr "添加(&A)..."
+
+#. Translators: The label of a button to change the selected beep of the
+#. pattern.
+#: addon/appModules/msedge/interface/beepDialogs.py:105
+msgid "&Edit..."
+msgstr "编辑(&E)..."
+
+#. Translators: The label of a button to delete the selected beep from the
+#. pattern.
+#: addon/appModules/msedge/interface/beepDialogs.py:107
+msgid "&Remove"
+msgstr "移除(&R)"
+
+#. Translators: The label of a button to play the selected beep earlier in the
+#. pattern.
+#: addon/appModules/msedge/interface/beepDialogs.py:109
+msgid "Move &up"
+msgstr "上移(&U)"
+
+#. Translators: The label of a button to play the selected beep later in the
+#. pattern.
+#: addon/appModules/msedge/interface/beepDialogs.py:111
+msgid "Move &down"
+msgstr "下移(&D)"
+
+#: addon/appModules/msedge/interface/beepDialogs.py:114
+msgid "&Play pattern"
+msgstr "播放序列(&P)"
+
+#. Translators: The label of the combo box to choose what NVDA does with the
+#. selected notification.
+#: addon/appModules/msedge/interface/panel.py:55
+msgid "&Action"
+msgstr "操作(&A)"
+
+#. Translators: The label of a check box to turn the selected setting on or
+#. off.
+#: addon/appModules/msedge/interface/panel.py:65
+msgid "Ena&bled"
+msgstr "启用(&B)"
+
+#. Translators: The label of a check box to speak a message of your own instead
+#. of Edge's one.
+#: addon/appModules/msedge/interface/panel.py:74
+msgid "Speak a &custom message"
+msgstr "朗读自定义消息(&C)"
+
+#. Translators: The label of the field holding the message to speak for the
+#. selected notification.
+#: addon/appModules/msedge/interface/panel.py:81
+msgid "&Message"
+msgstr "消息(&M)"
+
+#. Translators: The label of the field holding the wave file played for the
+#. notification.
+#: addon/appModules/msedge/interface/panel.py:90
+msgid "Wave &file"
+msgstr "音频文件(&F)"
+
+#. Translators: The label of a control to choose how loud the wave file is
+#. played.
+#: addon/appModules/msedge/interface/panel.py:97
+msgid "Wave file &volume (%)"
+msgstr "音频文件音量(&V) (%)"
+
+#. Translators: The label of the list of Microsoft Edge notifications.
+#: addon/appModules/msedge/interface/panel.py:113
+msgid "&Notification"
+msgstr "通知(&N)"
+
+#. Translators: The label of a button opening the dialog to build the beeps of
+#. a notification.
+#: addon/appModules/msedge/interface/panel.py:128
+msgid "Configure b&eeps..."
+msgstr "配置提示音(&E)..."
+
+#. Translators: The label of a button to choose the wave file played for the
+#. notification.
+#: addon/appModules/msedge/interface/panel.py:134
+msgid "&Browse..."
+msgstr "浏览(&B)..."
+
+#. Translators: The label of a button to hear the wave file played for the
+#. notification.
+#: addon/appModules/msedge/interface/panel.py:140
+msgid "&Play file"
+msgstr "播放文件(&P)"
+
+#. Translators: The label of a button to support the author of the add-on with
+#. a donation.
+#: addon/appModules/msedge/interface/panel.py:153
+msgid "&Support the author..."
+msgstr "支持作者(&S)..."
+
+#. Translators: The title of the dialog to choose the wave file played for a
+#. notification.
+#: addon/appModules/msedge/interface/panel.py:205
+msgid "Choose a wave file"
+msgstr "选择音频文件"
+
+#. Translators: The filter of the dialog to choose a wave file.
+#: addon/appModules/msedge/interface/panel.py:207
+msgid "Wave files"
+msgstr "音频文件"
+
+#. Translators: An action for a notification, meaning that it is not reported
+#. at all.
+#: addon/appModules/msedge/settings.py:44
+msgid "Off"
+msgstr "关闭"
+
+#. Translators: An action for a notification, meaning that it is spoken.
+#: addon/appModules/msedge/settings.py:46
+msgid "Speak"
+msgstr "朗读"
+
+#. Translators: An action for a notification, meaning that it is replaced by
+#. beeps.
+#: addon/appModules/msedge/settings.py:48
+msgid "Beeps"
+msgstr "提示音"
+
+#. Translators: An action for a notification, meaning that it is replaced by a
+#. wave file.
+#: addon/appModules/msedge/settings.py:50
+msgid "Wave file"
+msgstr "音频文件"
+
+#: addon/appModules/msedge/settings.py:76
+msgid "Loading of pages"
+msgstr "页面加载"
+
+#: addon/appModules/msedge/settings.py:77
+msgid "Page refresh"
+msgstr "页面刷新"
+
+#: addon/appModules/msedge/settings.py:78
+msgid "Closing of tab"
+msgstr "关闭标签页"
+
+#: addon/appModules/msedge/settings.py:79
+msgid "Opening of new tab"
+msgstr "打开新标签页"
+
+#: addon/appModules/msedge/settings.py:80
+msgid "Window opening"
+msgstr "打开窗口"
+
+#: addon/appModules/msedge/settings.py:81
+msgid "Opening of inprivate window"
+msgstr "打开无痕窗口"
+
+#: addon/appModules/msedge/settings.py:82
+msgid "Starting file download"
+msgstr "开始下载文件"
+
+#: addon/appModules/msedge/settings.py:83
+msgid "Download completion"
+msgstr "下载完成"
+
+#: addon/appModules/msedge/settings.py:84
+msgid "Navigating back"
+msgstr "返回"
+
+#: addon/appModules/msedge/settings.py:85
+msgid "Navigating forward"
+msgstr "前进"
+
+#: addon/appModules/msedge/settings.py:86
+msgid "No previous page to navigate"
+msgstr "无可返回页面"
+
+#: addon/appModules/msedge/settings.py:87
+msgid "No next page to navigate"
+msgstr "无可前进页面"
+
+#: addon/appModules/msedge/settings.py:88
+msgid "Removing toolbar buttons"
+msgstr "移除工具栏按钮"
+
+#: addon/appModules/msedge/settings.py:89
+msgid "Search mode"
+msgstr "搜索模式"
+
+#: addon/appModules/msedge/settings.py:90
+msgid "Availability of search mode"
+msgstr "搜索模式可用"
+
+#: addon/appModules/msedge/settings.py:91
+msgid "Appearing of notifications"
+msgstr "通知弹出"
+
+#: addon/appModules/msedge/settings.py:94
+msgid "Progress state of current download"
+msgstr "当前下载进度"
+
+#: addon/appModules/msedge/settings.py:100
+msgid "Indeterminate progress state of current download"
+msgstr "当前下载的不确定进度"
+
+#: addon/appModules/msedge/settings.py:105
+msgid "Announce autofill suggestions"
+msgstr "朗读自动填充建议"
+
+#: addon/appModules/msedge/settings.py:109
+msgid "Filling of autofill suggestions"
+msgstr "填入自动填充建议"
+
+#: addon/appModules/msedge/settings.py:110
+msgid "Closing popups like hiding  suggestions of autofill"
+msgstr "关闭弹出项，例如隐藏自动填充建议"
+
+#: addon/appModules/msedge/settings.py:111
+msgid "Hiding  autofill suggestions"
+msgstr "隐藏自动填充建议"
+
+#: addon/appModules/msedge/settings.py:112
+msgid "Microsoft edge update availability"
+msgstr "Microsoft Edge 有可用更新"
+
+#: addon/appModules/msedge/settings.py:113
+msgid "Zoom changes"
+msgstr "缩放变化"
+
+#: addon/appModules/msedge/settings.py:116
+msgid "Show suggestions while typing in addressbar"
+msgstr "在地址栏输入时显示建议"
+
+#: addon/appModules/msedge/settings.py:120
+msgid "Removing a suggestion"
+msgstr "移除建议"
+
+#: addon/appModules/msedge/settings.py:121
+msgid "Content setting notifications"
+msgstr "内容设置通知"
+
+#: addon/appModules/msedge/settings.py:122
+msgid "Triggerring of autofill suggestions"
+msgstr "触发自动填充建议"
+
+#: addon/appModules/msedge/settings.py:123
+msgid "Entering full screen"
+msgstr "进入全屏"
+
+#: addon/appModules/msedge/settings.py:124
+msgid "Exiting full screen"
+msgstr "退出全屏"
+
+#: addon/appModules/msedge/settings.py:125
+msgid "Showing of toolbars in full screen"
+msgstr "全屏时显示工具栏"
+
+#: addon/appModules/msedge/settings.py:126
+msgid "Hiding of toolbars in full screen"
+msgstr "全屏时隐藏工具栏"
